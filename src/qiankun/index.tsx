@@ -1,23 +1,17 @@
 import { registerMicroApps, start } from "qiankun";
 import { isDev } from "../constans/common";
-import renderSubApp from "../views/renderSub";
+
 
 /**
  * Step1 初始化应用
  */
-
-renderSubApp({ loading: true });
-
-const loader = (loading: boolean) => {
-  renderSubApp({ loading });
-};
 const subApps = [
-  {
-    name: "mission-aduser",
-    entry: isDev ? "//localhost:1024" : "mission-aduser",
-    developer: "aduser",
-    activeRule: isDev ? "/aduser" : "/aduser",
-  },
+  // {
+  //   name: "mission-aduser",
+  //   entry: isDev ? "//localhost:1024" : "mission-aduser",
+  //   developer: "aduser",
+  //   activeRule: isDev ? "/aduser" : "/aduser",
+  // },
   {
     name: "mission-anchor",
     entry: isDev ? "//localhost:4001" : "mission-anchor",
@@ -31,8 +25,7 @@ const apps = subApps.map(item => {
     ...item,
     loader: (loading: boolean) => {
       // 加载子应用时，显示loading = true，否则false
-      console.log("自应用正在加载中...", loading);
-      loader(loading)
+      console.log("应用正在加载中...", loading);
     }, 
     container: "#subapp-container", // 子应用挂载的div
     props: {

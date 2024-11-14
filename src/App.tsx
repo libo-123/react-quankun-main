@@ -1,15 +1,18 @@
-import { Spin } from "antd";
-import "./App.css";
-import { LoadingOutlined } from "@ant-design/icons";
-import {  } from './store'
-const antIcon = <LoadingOutlined style={{ fontSize: 24 }} spin />;
+import { Route, Routes } from "react-router-dom";
+import Sub from "./views/sub";
+import Main from "./views/main";
+import { useStyles } from "./style";
 
 const App = () => {
+  const { styles } = useStyles();
+
   return (
-    <Spin indicator={antIcon} spinning={false}>
-      <div className="App">app</div>
-      <div id="subapp-container"></div>
-    </Spin>
+    <div className={styles.container}>
+      <Routes>
+        <Route path="/" element={<Main />}></Route>
+        <Route path="/anchor" element={<Sub />}></Route>
+      </Routes>
+    </div>
   );
 };
 
