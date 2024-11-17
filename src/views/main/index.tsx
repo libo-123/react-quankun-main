@@ -2,7 +2,7 @@ import { Layout, Modal } from 'antd';
 import { Content, Footer, Header } from 'antd/es/layout/layout';
 import { useNavigate } from 'react-router-dom';
 import { PageHeader } from '@ant-design/pro-components';
-import { useLayOutStyles } from './styles';
+import { useHeaderStyles, useLayOutStyles } from './styles';
 import avatar from '@/assets/avatar.jpg';
 
 import { GithubOutlined, SearchOutlined } from '@ant-design/icons';
@@ -12,6 +12,7 @@ import { useFocusInput } from '@/utils/hooks';
 const Main = () => {
   const navigate = useNavigate();
   const { styles } = useLayOutStyles();
+  const { styles: headerStyles,cx } = useHeaderStyles();
 
   const [searchModalVis, setSearchModalVis] = useState(false);
   const handleFocus = () => {
@@ -24,33 +25,40 @@ const Main = () => {
   const [inputRef] = useFocusInput(handleFocus);
   return (
     <Layout className={styles.layoutStyle}>
-      <PageHeader
-        title="三寸日光"
-        tags={
-          <div className={styles.searchContent}>
-            <SearchOutlined className={styles.searchIcon} />
-            <input
-              ref={inputRef as React.RefObject<HTMLInputElement>}
-              placeholder="搜索您想要的内容..."
-              type="text"
-              name="text"
-              autoComplete="off"
-              className={styles.search}
-            />
-            
-          </div>
-        }
-        className={styles.headerStyle}
-        extra={
-          <div className={styles.gitHub}>
-            <GithubOutlined />
-          </div>
-        }
-        avatar={{ src: avatar }}
-      />
-      <Content className={styles.contentStyle}>
-        <div>1</div>
-        <div>2</div>
+      <header className={headerStyles.header}>
+        <div className={headerStyles.headerLeft}>
+          <img src={avatar} alt="" />
+          <span>三寸日光</span>
+        </div>
+        <div className={headerStyles.searchContent}>
+          <SearchOutlined className={headerStyles.searchIcon} />
+          <input
+            ref={inputRef as React.RefObject<HTMLInputElement>}
+            placeholder="搜索您想要的内容..."
+            type="text"
+            name="text"
+            autoComplete="off"
+            className={headerStyles.search}
+          />
+        </div>
+        <div className={headerStyles.gitHub}>
+          <GithubOutlined />
+        </div>
+      </header>
+
+      <Content className={cx(styles.cards,styles.contentStyle)}>
+        <div className={cx(styles.card,styles.red)}>
+          <p className="tip">Hover Me</p>
+          <p className="second-text">Lorem Ipsum</p>
+        </div>
+        <div className={cx(styles.card,styles.blue)}>
+          <p className="tip">Hover Me</p>
+          <p className="second-text">Lorem Ipsum</p>
+        </div>
+        <div className={cx(styles.card,styles.green)}>
+          <p className="tip">Hover Me</p>
+          <p className="second-text">Lorem Ipsum</p>
+        </div>
       </Content>
       <Footer className={styles.footerStyle}>不知天上宫阙，今夕是何年</Footer>
 
@@ -64,13 +72,13 @@ const Main = () => {
         className={styles.modalStyle}
       >
         <div className={styles.serchModalContent}>
-          <SearchOutlined className={styles.searchIcon} />
+          <SearchOutlined className={headerStyles.searchIcon} />
           <input
             placeholder="搜索您想要的内容..."
             type="text"
             name="text"
             autoComplete="off"
-            className={styles.search}
+            className={headerStyles.search}
           />
         </div>
         <div>
