@@ -12,8 +12,9 @@ root.render(
     <ConfigProvider
       theme={{
         token: {
-          colorPrimary: "#00b96b",
-          colorLink: "#00b96b",
+          // 基础配色
+          // colorPrimary: "#00b96b",
+          // colorLink: "#00b96b",
         },
       }}>
       <App />
