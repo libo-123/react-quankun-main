@@ -7,11 +7,15 @@ import { createStyles, css, AntdToken } from "antd-style";
 export const useLayOutStyles = createStyles(({ token, css, prefixCls, cx }, props: any) => {
     return {
         cards: css`
+            width: 50%;
+            height: 100%;
+            background-color: rebeccapurple;
            display: flex;
            flex-direction: column;
            gap: 15px;
            flex-wrap: wrap;
            justify-content: center;
+           border-left: 1px solid red;
        
         `,
         card: css`

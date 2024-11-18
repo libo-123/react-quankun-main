@@ -8,11 +8,12 @@ import avatar from '@/assets/avatar.jpg';
 import { GithubOutlined, SearchOutlined } from '@ant-design/icons';
 import { useState } from 'react';
 import { useFocusInput } from '@/utils/hooks';
+import styleCard from './index.module.less';
 
 const Main = () => {
   const navigate = useNavigate();
   const { styles } = useLayOutStyles();
-  const { styles: headerStyles,cx } = useHeaderStyles();
+  const { styles: headerStyles, cx } = useHeaderStyles();
 
   const [searchModalVis, setSearchModalVis] = useState(false);
   const handleFocus = () => {
@@ -46,18 +47,23 @@ const Main = () => {
         </div>
       </header>
 
-      <Content className={cx(styles.cards,styles.contentStyle)}>
-        <div className={cx(styles.card,styles.red)}>
-          <p className="tip">Hover Me</p>
-          <p className="second-text">Lorem Ipsum</p>
+      <Content className={cx(styles.contentStyle)}>
+        <div className={styleCard.cards}>
+          <div className={cx(styleCard.card, styleCard.red)}>
+            <p className="tip">Hover Me</p>
+            <p className="second-text">Lorem Ipsum</p>
+          </div>
+          <div className={cx(styles.card, styles.blue)}>
+            <p className="tip">Hover Me</p>
+            <p className="second-text">Lorem Ipsum</p>
+          </div>
+          <div className={cx(styles.card, styles.green)}>
+            <p className="tip">Hover Me</p>
+            <p className="second-text">Lorem Ipsum</p>
+          </div>
         </div>
-        <div className={cx(styles.card,styles.blue)}>
-          <p className="tip">Hover Me</p>
-          <p className="second-text">Lorem Ipsum</p>
-        </div>
-        <div className={cx(styles.card,styles.green)}>
-          <p className="tip">Hover Me</p>
-          <p className="second-text">Lorem Ipsum</p>
+        <div>
+          right
         </div>
       </Content>
       <Footer className={styles.footerStyle}>不知天上宫阙，今夕是何年</Footer>

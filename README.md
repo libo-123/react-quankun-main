@@ -5,8 +5,11 @@ https://ant-design.github.io/antd-style/zh-CN/guide   包括如何使用及从le
 
 antd-style库
 vscode用户需安装自动提示插件 vscode-styled-components
-
+...
 有点坑，不支持复合样式，需要拆开写
+...
+还是用less吧 我受不了了！https://blog.csdn.net/weixin_42289080/article/details/140202538
+
 
 ## 路由 方案
 https://juejin.cn/post/7033313711947251743?searchId=20241114233942F8CCF59AEFEEA162FF57
