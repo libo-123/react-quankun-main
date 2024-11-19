@@ -54,20 +54,21 @@ export const useLayOutStyles = createStyles(({ token, css, prefixCls, cx }, prop
             }
         `,
         contentStyle: {
-            minHeight: 'calc(100vh - 148px)',
-            lineHeight: '120px',
-            color: '#fff',
+           
+      
             // backgroundColor: '#0958d9',
         },
         footerStyle: {
             height: 64,
             textAlign: 'center',
-            color: '#fff',
-            backgroundColor: '#4096ff',
+            backgroundColor: '#fff',
         },
         layoutStyle: {
             borderRadius: 8,
             overflow: 'hidden',
+            backgroundColor: '#fff',
+            padding:'0 64px',
+
         },
 
         serchModalContent: css`

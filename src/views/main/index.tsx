@@ -9,6 +9,7 @@ import { GithubOutlined, SearchOutlined } from '@ant-design/icons';
 import { useState } from 'react';
 import { useFocusInput } from '@/utils/hooks';
 import styleCard from './index.module.less';
+import CardHover from '@/components/CardHover';
 
 const Main = () => {
   const navigate = useNavigate();
@@ -47,20 +48,14 @@ const Main = () => {
         </div>
       </header>
 
-      <Content className={cx(styles.contentStyle)}>
+      <Content className={cx(styleCard.contentStyle)}>
         <div className={styleCard.cards}>
-          <div className={cx(styleCard.card, styleCard.red)}>
-            <p className="tip">Hover Me</p>
-            <p className="second-text">Lorem Ipsum</p>
-          </div>
-          <div className={cx(styles.card, styles.blue)}>
-            <p className="tip">Hover Me</p>
-            <p className="second-text">Lorem Ipsum</p>
-          </div>
-          <div className={cx(styles.card, styles.green)}>
-            <p className="tip">Hover Me</p>
-            <p className="second-text">Lorem Ipsum</p>
-          </div>
+          <CardHover/>
+          <CardHover/>
+          <CardHover/>
+          <CardHover/>
+          <CardHover/>
+          <CardHover/>
         </div>
         <div>
           right
