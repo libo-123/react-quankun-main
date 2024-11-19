@@ -5,7 +5,7 @@ import { createStyles, css, AntdToken } from "antd-style";
  */
 export const useStyles = createStyles(({ token, css, prefixCls,cx }, props: { constom: boolean }) => ({
     container: {
-      backgroundColor: token.colorBgLayout,
+      backgroundColor: '#fff',
     },
     card: css`
       color: ${token.colorText};

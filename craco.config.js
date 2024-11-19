@@ -19,7 +19,30 @@ module.exports = {
       },
     },
   ],
-  
+  module: {
+    rules: [
+      {
+        test: /\.svg$/,
+        use: ["@svgr/webpack"],
+      },
+    ],
+  },
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          chunks: 'all'
+        }
+      },
+      chunks: 'all',
+      name: false
+    },
+    runtimeChunk: {
+      name: entrypoint => `runtime-${entrypoint.name}`
+    }
+  }
 }
 
 

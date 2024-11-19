@@ -9,7 +9,11 @@ vscode用户需安装自动提示插件 vscode-styled-components
 有点坑，不支持复合样式，需要拆开写
 ...
 还是用less吧 我受不了了！https://blog.csdn.net/weixin_42289080/article/details/140202538
-
+...
+用sāss，熟悉一点
+yarn add sass sass-loader 
+https://juejin.cn/post/7207410405855985725?searchId=20241119180950DB0C22909D0DC4EA36FE#heading-3
+优化部分后续看
 
 ## 路由 方案
 https://juejin.cn/post/7033313711947251743?searchId=20241114233942F8CCF59AEFEEA162FF57
