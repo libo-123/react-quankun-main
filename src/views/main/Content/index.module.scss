@@ -1,12 +1,16 @@
 @import '~@/assets/styles/theme.scss';
 
-.contentLayout{
-    .contentTop{
-        min-width: 100px;
+.contentLayout {
+    // width: 1288px;
+    // margin: auto;
+
+    .contentTop {
+        min-height: 100px;
         background-image: url("../../../assets/images/bg.png");
         padding: 40px 100px;
     }
-    .contentCard{
+
+    .contentCard {
         padding: 5px 100px;
         display: flex;
         justify-content: space-between;

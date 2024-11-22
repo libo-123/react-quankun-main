@@ -4,6 +4,7 @@ import React from "react";
 import styles from "./index.module.scss";
 import { Typography } from "antd";
 import { SmileFilled, SmileOutlined } from "@ant-design/icons";
+import CardGate from "@/components/CardGate";
 
 const { Title, Paragraph, Text, Link } = Typography;
 const ContentLayOut = () => {
@@ -20,7 +21,7 @@ const ContentLayOut = () => {
                 </Typography>
             </div>
             <div className={styles.contentCard}>
-                <CardHover />
+                {/* <CardGate /> */}
                 <CardHover />
                 <CardHover />
                 <CardHover />
