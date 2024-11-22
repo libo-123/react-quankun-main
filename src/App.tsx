@@ -1,13 +1,12 @@
 import { Route, Routes } from "react-router-dom";
 import Sub from "./views/sub";
 import Main from "./views/main";
-import { useStyles } from "./style";
 
+import '@/assets/styles/index.scss';
 const App = () => {
-  const { styles } = useStyles();
 
   return (
-    <div className={styles.container}>
+    <div className='container'>
       <Routes>
         <Route path="/" element={<Main />}></Route>
         <Route path="/anchor" element={<Sub />}></Route>

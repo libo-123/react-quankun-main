@@ -1,3 +1,120 @@
-.headerWrapper{
-    height: 60px;
+@import '~@/assets/styles/theme.scss';
+
+.headerWrapper {
+    padding: 0px 32px;
+    max-width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #fff;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.03), 0 1px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px 0 rgba(0, 0, 0, 0.02);
+    height: $headerHeight;
+
+    .headerLeft {
+        line-height: $headerHeight;
+
+        img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+
+        .line {
+            width: 1px;
+            height: 20px;
+            background-color: $grey;
+            margin-top: 22px;
+            float: right;
+
+        }
+    }
+
+    .searchContent {
+        display: flex;
+        align-items: center;
+
+        .searchIcon {
+            // margin-right: 10px;
+            color: $grey;
+            margin-left: 15px;
+            margin-right: -20px;
+            z-index: 99;
+
+        }
+
+        .inputSearch {
+            width: 60%;
+            height: 40px;
+            border: none;
+            margin-left: 5px;
+            padding-left: 25px;
+        }
+
+        :global(.ant-input-outlined) {
+            box-shadow: none;
+        }
+
+        .modalSearch {
+            inset-inline-end: 11px;
+            display: inline-block;
+            padding: 4px 8px;
+            font-size: 12px;
+            line-height: 1;
+            white-space: nowrap;
+            border: 1px solid #d0d5d8;
+            color: #d0d5d8;
+            border-radius: 4px;
+            transition: all .3s;
+            cursor: pointer;
+            user-select: none;
+
+            &:hover {
+                color: $grey;
+                border-color: $grey;
+            }
+        }
+    }
+
+    .searchNav {
+
+        ul {
+            display: flex;
+            justify-content: flex-end;
+            width: 100%;
+            flex-wrap: wrap;
+
+            li {
+                margin: 0 10px;
+                height: 100%;
+                padding: 0 15px;
+                text-align: center;
+                line-height: $headerHeight;
+                transition: 0.2s;
+                box-sizing: border-box;
+                color: rgba(0, 0, 0, 0.88);
+
+                &:hover {
+                    color: #fa541c;
+                    border-bottom: #fa541c 2px solid;
+                    cursor: pointer;
+                }
+            }
+        }
+
+    }
+
+    .headerRight {
+        .icon {
+            margin-top: 17px;
+            float: right;
+
+            svg {
+                width: 30px;
+                height: 30px;
+            }
+        }
+
+    }
 }

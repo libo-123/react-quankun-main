@@ -4,7 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import qiankunStart from "./qiankun";
 
-import "./reset.css";
+
 const root = createRoot(document.getElementById("main-app") as HTMLElement);
 //  主程序
 root.render(
@@ -12,9 +12,13 @@ root.render(
     <ConfigProvider
       theme={{
         token: {
-          // 基础配色
-          // colorPrimary: "#00b96b",
-          // colorLink: "#00b96b",
+          "colorPrimary": "#fa541c",
+          "colorInfo": "#fa541c",
+          "wireframe": false,
+          "colorSuccess": "#fa541c",
+          "colorWarning": "#fa541c",
+          "colorError": "#fa541c",
+          "colorLink": "#fa541c"
         },
       }}>
       <App />
