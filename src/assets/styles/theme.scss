@@ -1,2 +1,14 @@
 $headerHeight: 64px;
 $grey: #bbb;
+
+
+/**
+*   页面整体布局
+*/
+%layoutAuto {
+    // card 284 宽度 + padding 16 * 2 + gap 20 * 3
+    max-width: 1228px;
+    padding: 0 16px;
+    margin: auto;
+
+}

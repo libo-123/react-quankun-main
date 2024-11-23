@@ -1,11 +1,69 @@
+.card {
+    width: 284px;
+    height: 292px;
+    box-sizing: border-box;
+    color: rgba(0, 0, 0, 0.88);
 
-.card{
-    height: 200px;
-    border: solid 1px #000;
-    border-radius: 10px;
+    border-radius: 8px;
 
+    transition: 0.6s;
+    overflow: hidden;
+    border: rgb(234, 234, 234) 1px solid;
+    cursor: pointer;
 
-    padding-left: 12px;
-    padding-right: 12px;
-    max-width: 25%;
+    &:hover {
+        box-shadow: 0px 12px 36px rgba(0, 0, 0, 0.4);
+
+    }
+
+    &:hover .card-top .imgIcon {
+        transform: scale(1.5);
+
+    }
+
+    .card-top {
+        height: calc(100% / 3 * 2);
+        position: relative;
+
+        .iconText {
+            position: absolute;
+            top: 8px;
+            inset-inline-end: 8px;
+            padding: 4px 8px;
+            color: #fff;
+            font-size: 12px;
+            line-height: 1;
+            background: rgba(0, 0, 0, 0.65);
+            border-radius: 8px;
+            box-shadow: 0 0 2px rgba(255, 255, 255, 0.2);
+            display: inline-flex;
+            column-gap: 4px;
+        }
+
+        .imgIcon {
+            display: block;
+            position: absolute;
+
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+
+            font-size: 65px;
+            width: 30%;
+            height: 30%;
+            text-align: center;
+            line-height: 100%;
+            transition: 0.6s;
+            color: rgba(0, 0, 0, 0.65);
+        }
+    }
+
+    .card-bottom {
+        height: calc(100% / 3);
+        background-color: #fff;
+        padding: 24px;
+
+    }
 }

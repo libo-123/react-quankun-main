@@ -7,8 +7,8 @@ export { }
 
 /**
  * 
- * @param handleFocus 点击触发的函数
- * @returns  聚焦对象
+ * @param handleFocus 目标函数
+ * @returns focus聚焦 触发目标函数
  */
 
 export const useFocusInput = (handleFocus: (...arg: any) => void) => {

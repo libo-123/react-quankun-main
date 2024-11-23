@@ -1,10 +1,38 @@
 
+import cls from 'classnames'
 import styles from './index.module.scss'
+import React, { ReactNode } from 'react'
 
-const CardCate = () => {
+import { Typography } from 'antd'
+import { ContactsOutlined } from '@ant-design/icons';
+const { Title, Paragraph } = Typography;
+
+type IProps = {
+    cardData: {
+        title: string
+        desc: string
+        icon: ReactNode
+    }
+    bgColor: string;
+    handleClick?: () => void
+}
+const CardCate: React.FC<IProps> = ({ cardData, bgColor, handleClick }) => {
+    const { title, desc, icon } = cardData;
     return (
-        <div className={styles.card}>
-            CardCate
+        <div className={styles.card} onClick={handleClick}>
+            <div className={cls(styles['card-top'])}
+                style={{ backgroundColor: bgColor }}>
+                <span className={styles.iconText}>官方</span>
+                <span className={styles.imgIcon}>
+                    {icon}
+                </span>
+            </div>
+            <div className={styles['card-bottom']}>
+                <Typography>
+                    <Title level={5}>{title}</Title>
+                    <Paragraph>{desc}</Paragraph>
+                </Typography>
+            </div>
         </div>
     );
 };
