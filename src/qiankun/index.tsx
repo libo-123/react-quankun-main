@@ -6,22 +6,17 @@ import { isDev } from "../constans/common";
  * Step1 初始化应用
  */
 const subApps = [
-  // {
-  //   name: "mission-aduser",
-  //   entry: isDev ? "//localhost:1024" : "mission-aduser",
-  //   developer: "aduser",
-  //   activeRule: isDev ? "/aduser" : "/aduser",
-  // },
   {
     name: "mission-anchor",
     entry: isDev ? "//localhost:4001" : "mission-anchor",
     developer: "anchor",
     activeRule: isDev ? "/anchor" : "/anchor",
-  }, {
-    name: "mission-editor",
-    entry: isDev ? "//localhost:3500" : "mission-editor",
-    developer: "anchor",
-    activeRule: isDev ? "/editor" : "/editor",
+  }, 
+  {
+    name: "manager",
+    entry: isDev ? "//localhost:3500" : "mission-manager",
+    developer: "manager",
+    activeRule: isDev ? "/manager" : "/",
   },
 ];
 
