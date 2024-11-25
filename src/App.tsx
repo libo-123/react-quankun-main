@@ -10,6 +10,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Main />}></Route>
         <Route path="/anchor" element={<Sub />}></Route>
+        <Route path="/editor" element={<Sub />}></Route>
       </Routes>
     </div>
   );

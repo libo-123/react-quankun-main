@@ -17,6 +17,11 @@ const subApps = [
     entry: isDev ? "//localhost:4001" : "mission-anchor",
     developer: "anchor",
     activeRule: isDev ? "/anchor" : "/anchor",
+  }, {
+    name: "mission-editor",
+    entry: isDev ? "//localhost:3500" : "mission-editor",
+    developer: "anchor",
+    activeRule: isDev ? "/editor" : "/editor",
   },
 ];
 

@@ -2,16 +2,17 @@ import React, { useState } from 'react';
 import styles from './index.module.scss';
 import { useFocusInput } from '@/utils/hooks';
 import { Col, Input, Modal, Row } from 'antd';
-import { GithubOutlined, SearchOutlined } from '@ant-design/icons';
+import { GithubOutlined, SearchOutlined, SettingOutlined } from '@ant-design/icons';
 import avatar from '@/assets/avatar.jpg';
 import SwitchTheme from '@/components/SwitchTheme';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 /**
  * 页面头部栏
  */
 const HeaderLine = () => {
   const [searchModalVis, setSearchModalVis] = useState(false);
-
+ const navition = useNavigate()
   return (
     <>
       <Row className={styles.headerWrapper}>
@@ -37,6 +38,7 @@ const HeaderLine = () => {
         </Col>
         <Col xs={4} sm={4} md={4} lg={4} xl={4} className={styles.headerRight}>
           <div className={styles.content}>
+            <div className={styles.setting} title='配置参数' onClick={()=>navition('/editor')}><SettingOutlined /></div>
             <div className={styles.switch}>
               <SwitchTheme />
             </div>
