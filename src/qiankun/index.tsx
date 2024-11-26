@@ -10,13 +10,13 @@ const subApps = [
     name: "mission-anchor",
     entry: isDev ? "//localhost:4001" : "mission-anchor",
     developer: "anchor",
-    activeRule: isDev ? "/anchor" : "/anchor",
-  }, 
+    activeRule: "/anchor",
+  },
   {
     name: "manager",
     entry: isDev ? "//localhost:3500" : "mission-manager",
     developer: "manager",
-    activeRule: isDev ? "/manager" : "/",
+    activeRule: "/manager",
   },
 ];
 
@@ -26,7 +26,7 @@ const apps = subApps.map(item => {
     loader: (loading: boolean) => {
       // 加载子应用时，显示loading = true，否则false
       console.log("应用正在加载中...", loading);
-    }, 
+    },
     container: "#subapp-container", // 子应用挂载的div
     props: {
       developer: item.developer, // 下发基础路由
