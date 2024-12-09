@@ -18,7 +18,7 @@ const HeaderLine = () => {
       <Row className={styles.headerWrapper}>
         <Col xs={0} sm={0} md={0} lg={4} xl={4} className={styles.headerLeft}>
           <img src={avatar} alt="" />
-          <span>博的个人日记</span>
+          <span>登黄山、天下无山</span>
           <span className={styles.line}></span>
         </Col>
         <Col xs={20} sm={20} md={20} lg={6} xl={8} className={styles.searchContent}>
@@ -31,16 +31,16 @@ const HeaderLine = () => {
         <Col xs={0} sm={0} md={0} lg={10} xl={8} className={styles.searchNav}>
           <ul>
             <li>首页</li>
-            <li>组件</li>
             <li>博客</li>
-            <li>国内镜像</li>
+            <li>github</li>
+            <li>其他</li>
           </ul>
         </Col>
         <Col xs={4} sm={4} md={4} lg={4} xl={4} className={styles.headerRight}>
           <div className={styles.content}>
             <div className={styles.setting} title='配置参数' onClick={()=>window.open('/manager')}><SettingOutlined /></div>
             <div className={styles.switch}>
-              <SwitchTheme />
+              {/* <SwitchTheme /> */}
             </div>
             <GithubOutlined className={styles.icon} />
           </div>

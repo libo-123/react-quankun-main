@@ -28,9 +28,14 @@ const CardCate: React.FC<IProps> = ({ cardData, bgColor, handleClick }) => {
                 </span>
             </div>
             <div className={styles['card-bottom']}>
-                <Typography>
+                <Typography >
                     <Title level={5}>{title}</Title>
-                    <Paragraph>{desc}</Paragraph>
+                    <Paragraph ellipsis={
+                        {
+                            rows: 1,
+                            tooltip:desc
+                        }
+                    } >{desc}</Paragraph>
                 </Typography>
             </div>
         </div>
