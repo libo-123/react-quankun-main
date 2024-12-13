@@ -163,3 +163,12 @@
     }
 
 }
+
+.surveyModal{
+    min-width: 200px;
+    
+    :global(.ant-modal-body) {
+        padding-top: 24px;
+    }
+
+}

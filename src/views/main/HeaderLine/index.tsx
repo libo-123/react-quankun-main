@@ -1,22 +1,22 @@
 import React, { useState } from 'react';
 import styles from './index.module.scss';
-import { Col, Input, Modal, Row, Switch, Tooltip, message } from 'antd';
+import { Col, Form, Input, Modal, Row, Switch, Tooltip, message } from 'antd';
 import { GithubOutlined, SearchOutlined, SettingOutlined } from '@ant-design/icons';
 import avatar from '@/assets/avatar.jpg';
 import SwitchTheme from '@/components/SwitchTheme';
 import { Navigate, useNavigate } from 'react-router-dom';
+import SurveyForm from '@/components/SurveyForm';
 
 /**
  * 页面头部栏
  */
 const HeaderLine = () => {
   const [searchModalVis, setSearchModalVis] = useState(false);
+  const [surveyVis, setSureyVis] = useState(false);
   const navition = useNavigate()
 
-  const handleAdvice = () => {
-    // message.info('欢迎提出宝贵意见！');
+  const [form] = Form.useForm();
 
-  }
   return (
     <>
       <Row className={styles.headerWrapper}>
@@ -37,7 +37,7 @@ const HeaderLine = () => {
             <li>首页</li>
             <li>博客</li>
             <li>github</li>
-            <li onClick={handleAdvice}>反馈与建议</li>
+            <li onClick={() => setSureyVis(true)}>反馈与建议</li>
           </ul>
         </Col>
         <Col xs={4} sm={4} md={4} lg={4} xl={4} className={styles.headerRight}>
@@ -72,6 +72,12 @@ const HeaderLine = () => {
         <div>
           { }
         </div>
+      </Modal>
+      <Modal open={surveyVis} footer={null} onCancel={() => {
+        form.resetFields()
+        setSureyVis(false)
+      }} className={styles.surveyModal}>
+        <SurveyForm form={form} setVisible={setSureyVis} />
       </Modal>
     </>
   );

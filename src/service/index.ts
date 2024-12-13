@@ -2,7 +2,7 @@ import { message } from "antd";
 import axios from "axios";
 
 const instance = axios.create({
-    baseURL: process.env.REACT_APP_API_URL,  // 你的API地址
+    baseURL: '//nest.liboscrg.com',  // 你的API地址
     timeout: 4000,  // 请求超时时间
 });
 instance.interceptors.request.use(
