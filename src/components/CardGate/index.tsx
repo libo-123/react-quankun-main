@@ -14,12 +14,13 @@ type IProps = {
         icon: ReactNode
     }
     bgColor: string;
-    handleClick?: () => void
+    handleClick?: () => void;
+    className?: string;
 }
-const CardCate: React.FC<IProps> = ({ cardData, bgColor, handleClick }) => {
+const CardCate: React.FC<IProps> = ({ cardData, bgColor, handleClick,className }) => {
     const { title, desc, icon } = cardData;
     return (
-        <div className={styles.card} onClick={handleClick}>
+        <div className={cls(styles.card,className)} onClick={handleClick}>
             <div className={cls(styles['card-top'])}
                 style={{ backgroundColor: bgColor }}>
                 <span className={styles.iconText}>官方</span>

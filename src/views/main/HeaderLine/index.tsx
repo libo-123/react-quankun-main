@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styles from './index.module.scss';
 import { useFocusInput } from '@/utils/hooks';
-import { Col, Input, Modal, Row } from 'antd';
+import { Col, Input, Modal, Row, Switch, Tooltip } from 'antd';
 import { GithubOutlined, SearchOutlined, SettingOutlined } from '@ant-design/icons';
 import avatar from '@/assets/avatar.jpg';
 import SwitchTheme from '@/components/SwitchTheme';
@@ -12,7 +12,7 @@ import { Navigate, useNavigate } from 'react-router-dom';
  */
 const HeaderLine = () => {
   const [searchModalVis, setSearchModalVis] = useState(false);
- const navition = useNavigate()
+  const navition = useNavigate()
   return (
     <>
       <Row className={styles.headerWrapper}>
@@ -33,14 +33,19 @@ const HeaderLine = () => {
             <li>首页</li>
             <li>博客</li>
             <li>github</li>
-            <li>其他</li>
+            <li>反馈与建议</li>
           </ul>
         </Col>
         <Col xs={4} sm={4} md={4} lg={4} xl={4} className={styles.headerRight}>
           <div className={styles.content}>
-            <div className={styles.setting} title='配置参数' onClick={()=>window.open('/manager')}><SettingOutlined /></div>
+            <div className={styles.setting} onClick={() => navition('/manager')}>
+              <Tooltip title={'更新此页面入口！'}>
+                <SettingOutlined />
+              </Tooltip>
+            </div>
             <div className={styles.switch}>
               {/* <SwitchTheme /> */}
+              <Switch />
             </div>
             <GithubOutlined className={styles.icon} />
           </div>

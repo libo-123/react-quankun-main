@@ -3,6 +3,8 @@ import { Typography } from "antd";
 import CardGate from "@/components/CardGate";
 import styles from "./index.module.scss";
 import { ContactsOutlined, ControlOutlined, DatabaseOutlined, DesktopOutlined } from "@ant-design/icons";
+import { useEffect, useState } from "react";
+import { getCardList, getHeaderTitle } from "@/service/api";
 
 const { Title, Paragraph } = Typography;
 const bgColor = [
@@ -24,63 +26,51 @@ const iconCard = [
 ]
 
 const ContentLayOut = () => {
+    const [headerTitle, setHeaderTitle] = useState<{ title: string, description: string }>()
+    const [cardData, setCardData] = useState<{
+        id: number
+        title: string,
+        description: string,
+        link: string
+    }[]>()
     // 后续由接口配置数据
+    useEffect(() => {
+        getHeaderTitle().then(res => {
+            setHeaderTitle(res?.data?.[0])
+        }).catch(err => {
+            console.error(err);
+        })
+
+        getCardList().then(res => {
+            setCardData(res?.data || [])
+        }).catch(err => {
+            console.error(err);
+        })
+    }, []);
 
     return (
         <div className={styles.contentLayout}>
             <div className={styles.contentTop}>
                 <Typography className={styles.text}>
-                    <Title>介绍</Title>
+                    <Title>{headerTitle?.title}</Title>
                     <Paragraph>
-                        There is currently no need to explain, and we will come back to supplement it in the future to achieve fully dynamic loading of explanatory data
-                        <br />
-                        含：WEB前端开发「管理系统模板、常用示例」，仅供参考学习。如有补充说明，后续添加到这里！
+                        <div dangerouslySetInnerHTML={{ __html: headerTitle?.description || '' }} />
                     </Paragraph>
                 </Typography>
             </div>
             <div className={styles.contentCard}>
-                <CardGate bgColor={bgColor[0]}
-                    cardData={{
-                        title: 'React管理系统1',
-                        desc: '国际化、动态菜单、可视化大屏',
-                        icon: iconCard[0]
-                    }}
-                    handleClick={()=>{
-                        window.open('http://web1.liboscrg.com/')
-                    }}
-                     />
-                <CardGate bgColor={bgColor[1]}
-                    cardData={{
-                        title: 'React管理系统2',
-                        desc: '地图、RCBA权限、图表封装',
-                        icon: iconCard[1]
-                    }} 
-                    handleClick={()=>{
-                        window.open('http://web2.liboscrg.com')
-                    }}
-                    />
-                <CardGate bgColor={bgColor[2]}
-                    cardData={{
-                        title: 'Vue在线知识库',
-                        desc: 'Java+Vue、Socket通讯、OSS存储、jwt',
-                        icon: iconCard[2]
-                    }} 
-                    handleClick={()=>{
-                        window.open('http://knowleage.liboscrg.com')
-                    }}
-                    />
-                <CardGate bgColor={bgColor[3]}
-                    cardData={{
-                        title: '补位1',
-                        desc: '补位1',
-                        icon: iconCard[3]
-                    }} />
-                 <CardGate bgColor={bgColor[5]}
-                    cardData={{
-                        title: '补位2',
-                        desc: '补位2',
-                        icon: iconCard[1]
-                    }} />
+                {
+                    cardData?.map((item, index) => {
+                        return (
+                            <CardGate
+                                key={item.id}
+                                bgColor={bgColor[index % bgColor.length]}
+                                cardData={{ title: item.title, desc: item.description, icon: iconCard[index % iconCard.length] }}
+                                handleClick={() => { window.open(item.link) }}
+                            />
+                        );
+                    })
+                }
             </div>
         </div>
     );

@@ -14,7 +14,7 @@ const subApps = [
   // },
   {
     name: "manager",
-    entry: isDev ? "//localhost:3500" : "www.liboscrg.com/manager",
+    entry: isDev ? "//localhost:3500" : "//setting.liboscrg.com",
     developer: "manager",
     activeRule: "/manager",
   },
