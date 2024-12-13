@@ -12,13 +12,13 @@ root.render(
     <ConfigProvider
       theme={{
         token: {
-          "colorPrimary": "#fa541c",
-          "colorInfo": "#fa541c",
-          "wireframe": false,
-          "colorSuccess": "#fa541c",
-          "colorWarning": "#fa541c",
-          "colorError": "#fa541c",
-          "colorLink": "#fa541c"
+          // "colorPrimary": "#fa541c",
+          // "colorInfo": "#fa541c",
+          // "wireframe": false,
+          // "colorSuccess": "#fa541c",
+          // "colorWarning": "#fa541c",
+          // "colorError": "#fa541c",
+          // "colorLink": "#fa541c"
         },
       }}>
       <App />

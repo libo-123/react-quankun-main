@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import styles from './index.module.scss';
-import { useFocusInput } from '@/utils/hooks';
-import { Col, Input, Modal, Row, Switch, Tooltip } from 'antd';
+import { Col, Input, Modal, Row, Switch, Tooltip, message } from 'antd';
 import { GithubOutlined, SearchOutlined, SettingOutlined } from '@ant-design/icons';
 import avatar from '@/assets/avatar.jpg';
 import SwitchTheme from '@/components/SwitchTheme';
@@ -13,12 +12,17 @@ import { Navigate, useNavigate } from 'react-router-dom';
 const HeaderLine = () => {
   const [searchModalVis, setSearchModalVis] = useState(false);
   const navition = useNavigate()
+
+  const handleAdvice = () => {
+    // message.info('欢迎提出宝贵意见！');
+
+  }
   return (
     <>
       <Row className={styles.headerWrapper}>
         <Col xs={0} sm={0} md={0} lg={4} xl={4} className={styles.headerLeft}>
           <img src={avatar} alt="" />
-          <span>登黄山、天下无山</span>
+          <span>登黄山，天下无山！</span>
           <span className={styles.line}></span>
         </Col>
         <Col xs={20} sm={20} md={20} lg={6} xl={8} className={styles.searchContent}>
@@ -33,7 +37,7 @@ const HeaderLine = () => {
             <li>首页</li>
             <li>博客</li>
             <li>github</li>
-            <li>反馈与建议</li>
+            <li onClick={handleAdvice}>反馈与建议</li>
           </ul>
         </Col>
         <Col xs={4} sm={4} md={4} lg={4} xl={4} className={styles.headerRight}>
@@ -45,7 +49,9 @@ const HeaderLine = () => {
             </div>
             <div className={styles.switch}>
               {/* <SwitchTheme /> */}
-              <Switch />
+              <Switch value={true} onClick={() => {
+                message.info('切换主题,还没开发好！')
+              }} />
             </div>
             <GithubOutlined className={styles.icon} />
           </div>
