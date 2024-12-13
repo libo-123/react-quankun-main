@@ -6,15 +6,15 @@ import { isDev } from "../constans/common";
  * Step1 初始化应用
  */
 const subApps = [
-  {
-    name: "mission-anchor",
-    entry: isDev ? "//localhost:4001" : "mission-anchor",
-    developer: "anchor",
-    activeRule: "/anchor",
-  },
+  // {
+  //   name: "mission-anchor",
+  //   entry: isDev ? "//localhost:4001" : "mission-anchor",
+  //   developer: "anchor",
+  //   activeRule: "/anchor",
+  // },
   {
     name: "manager",
-    entry: isDev ? "//localhost:3500" : "mission-manager",
+    entry: isDev ? "//localhost:3500" : "www.liboscrg.com/manager",
     developer: "manager",
     activeRule: "/manager",
   },
