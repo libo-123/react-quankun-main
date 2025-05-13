@@ -33,6 +33,6 @@ qiankunStart({
   prefetch: false,
   sandbox: {
     // strictStyleIsolation: true, // 表示开启严格的样式隔离模式  旧版本版本
-    experimentalStyleIsolation: true, // 是否开启样式私有化
+    experimentalStyleIsolation: true, // 是否开启样式私有化  实际上就是加了前缀
   },
 });
